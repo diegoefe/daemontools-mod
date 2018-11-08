@@ -1,0 +1,36 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body>
+<a href="https://cr.yp.to/djb.html">D. J. Bernstein</a>
+<br><a href="https://cr.yp.to/unix.html">UNIX</a>
+<br><a href="https://cr.yp.to/daemontools.html">daemontools</a>
+<h1>How to install daemontools</h1>
+Like any other piece of software (and information generally),
+daemontools comes with NO WARRANTY.
+<h2>System requirements</h2>
+daemontools works only under UNIX.
+<h2>Installation</h2>
+Create a <tt>/package</tt> directory:
+<pre>     mkdir -p /package
+     chmod 1755 /package
+     cd /package
+</pre>
+Download
+<a href="https://cr.yp.to/daemontools/daemontools-0.76.tar.gz">daemontools-0.76.tar.gz</a>
+into <tt>/package</tt>.
+Unpack the daemontools package:
+<pre>     gunzip daemontools-0.76.tar
+     tar -xpf daemontools-0.76.tar
+     rm -f daemontools-0.76.tar
+     cd admin/daemontools-0.76
+</pre>
+Compile and set up the daemontools programs:
+<pre>     package/install
+</pre>
+On BSD systems, reboot to start <tt>svscan</tt>.
+<p>
+To report success:
+</p><pre>     mail djb-sysdeps@cr.yp.to &lt; /package/admin/daemontools/compile/sysdeps
+</pre>
+
+
+</body></html>
