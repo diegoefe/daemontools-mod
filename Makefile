@@ -11,11 +11,11 @@ local: servers
 
 clean: clean-bin
 
-clean-bin: clean-serv
+clean-bin: clean-local
 	rm -rfv command
 	rm -rfv compile 
 		
-clean-serv:
+clean-local:
 	$(MAKE) -C servers clean
 	$(MAKE) -C local clean
 
