@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-aca=$(pwd)
-export PATH=$aca/command:$PATH
-./svscanboot ${aca}/servicios ${aca}/command &
+. $(dirname "${BASH_ARGV[0]}")/env.sh
+export PATH=$DTM_CMDS:$PATH
+./svscanboot $DTM_WATCH $DTM_CMDS &

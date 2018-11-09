@@ -1,8 +1,9 @@
-#!/bin/sh
-# WARNING: This file was auto-generated. Do not edit!
+#!/usr/bin/env bash
 
-cmds=/command
-serv=/service
+. $(dirname "${BASH_ARGV[0]}")/env.sh
+
+cmds=${DTM}/command
+serv=${DTM_WATCH}
 
 if [ ! -z "$1" ]; then serv=$1; fi
 if [ ! -z "$2" ]; then cmds=$2; fi

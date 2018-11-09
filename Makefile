@@ -10,9 +10,10 @@ servicios:
 	$(MAKE) -C servicios
 
 clean:
+	./stopit
 	rm -rfv command
 	rm -rfv compile 
 	$(MAKE) -C servers clean
 	$(MAKE) -C servicios clean
 		
-.PHONY: server servicios
+.PHONY: servers servicios

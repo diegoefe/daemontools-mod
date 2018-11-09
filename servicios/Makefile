@@ -6,6 +6,5 @@ servers:
 	./makeserv.sh 3
 
 clean:
-	rm -rfv watch/simple1
-	rm -rfv watch/simple2
-	rm -rfv watch/simple3
+	rm -rfv real
+	rm -rfv watch

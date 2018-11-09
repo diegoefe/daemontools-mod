@@ -6,10 +6,19 @@ then
 	exit 1
 fi
 
+. $(dirname "${BASH_ARGV[0]}")/env.sh
+
+# echo "DTM($DTM)"
+# echo "DTM_REAL($DTM_REAL)"
+
 serv="simple${1}"
-exe=$(dirname $(pwd))/servers/simple
-run=watch/$serv/run
-mkdir -pv watch/$serv
-cat sample-run | sed "s|EXE|${exe} ${1}|g" > $run
+exe=${DTM}/servers/simple
+run=${DTM_REAL}/$serv/run
+
+# exit 0
+
+mkdir -pv ${DTM_WATCH}
+mkdir -pv ${DTM_REAL}/$serv
+cat run.template| sed "s|EXE|${exe} ${1}|g" > $run
 chmod +x $run
 
