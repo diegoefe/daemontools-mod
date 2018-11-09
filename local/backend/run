@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# redirect stderr to stdin
+
+cd /home/dflorio/pru/backend
+# run the program
+exec /opt/local/bin/node server/engh-backend-server.js
