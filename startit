@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+aca=$(pwd)
+export PATH=$aca/command:$PATH
+./svscanboot ${aca}/servicios ${aca}/command &

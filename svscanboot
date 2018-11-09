@@ -1,0 +1,19 @@
+#!/bin/sh
+# WARNING: This file was auto-generated. Do not edit!
+
+cmds=/command
+serv=/service
+
+if [ ! -z "$1" ]; then serv=$1; fi
+if [ ! -z "$2" ]; then cmds=$2; fi
+
+PATH=${cmds}:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin
+
+exec </dev/null
+exec >/dev/null
+exec 2>/dev/null
+
+${cmds}/svc -dx ${serv}/* ${serv}/*/log
+
+env - PATH=$PATH svscan ${serv} 2>&1 | \
+env - PATH=$PATH readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................
