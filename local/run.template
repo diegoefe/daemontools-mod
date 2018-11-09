@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
+# redirect stderr to stdin
+exec 2>&1
+
+# run the program
 exec EXE

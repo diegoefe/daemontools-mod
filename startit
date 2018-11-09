@@ -2,4 +2,4 @@
 
 . $(dirname "${BASH_ARGV[0]}")/env.sh
 export PATH=$DTM_CMDS:$PATH
-./svscanboot $DTM_WATCH $DTM_CMDS &
+$DTM/svscanboot $DTM_WATCH $DTM_CMDS &

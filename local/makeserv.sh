@@ -14,6 +14,7 @@ fi
 serv="simple${1}"
 exe=${DTM}/servers/simple
 run=${DTM_REAL}/$serv/run
+logrun=${DTM_REAL}/$serv/log/run
 
 # exit 0
 
@@ -22,3 +23,11 @@ mkdir -pv ${DTM_REAL}/$serv
 cat run.template| sed "s|EXE|${exe} ${1}|g" > $run
 chmod +x $run
 
+logdir=${DTM_REAL}/$serv/log
+logmain=$logdir/main
+mkdir -pv ${logdir}
+chmod 1755 ${logdir}
+mkdir -pv ${logmain}
+chmod 1755 ${logmain}
+cat log-run.template > $logrun
+chmod +x $logrun

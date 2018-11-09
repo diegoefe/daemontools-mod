@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 
+if [ ! -z "$DTM" ]
+then
+	. ${DTM}/env.sh
+else
+	. $(dirname "${BASH_ARGV[0]}")/env.sh
+	if [ -z "$DTM" ]
+	then
+		echo "env.sh not loaded, aborting!"
+		exit 1
+	fi
+fi
 
-. $(dirname "${BASH_ARGV[0]}")/env.sh
 
 spid=$(ps waux | grep "./svscanboot" | grep -v grep | awk '{ print $2 }')
 # echo "pid($spid)"
@@ -11,6 +21,6 @@ then
 fi
 
 $KILLALL svscan || echo "No running svscan"
-$KILLALL readproctitle || echo "No running readproctitle"
 $KILLALL supervise || echo "No running supervise"
+$KILLALL readproctitle || echo "No running readproctitle"
 
