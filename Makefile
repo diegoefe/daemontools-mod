@@ -1,4 +1,4 @@
-all: dtools servers servicios
+all: dtools servers local
 
 dtools:
 	package/compile
@@ -6,8 +6,8 @@ dtools:
 servers:
 	$(MAKE) -C servers
 
-servicios: servers
-	$(MAKE) -C servicios
+local: servers
+	$(MAKE) -C local
 
 clean: clean-bin
 
@@ -17,6 +17,6 @@ clean-bin: clean-serv
 		
 clean-serv:
 	$(MAKE) -C servers clean
-	$(MAKE) -C servicios clean
+	$(MAKE) -C local clean
 
-.PHONY: servers servicios
+.PHONY: servers local
