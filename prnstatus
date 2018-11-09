@@ -1,0 +1,2 @@
+# ps waux | grep 'svscanboot\|svscan\|supervise' | grep -v grep
+ps wauf | grep 'svscanboot\|svscan\|supervise\|readproctitle' | grep -v grep

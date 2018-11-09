@@ -11,5 +11,6 @@ then
 fi
 
 $KILLALL svscan || echo "No running svscan"
+$KILLALL readproctitle || echo "No running readproctitle"
 $KILLALL supervise || echo "No running supervise"
 

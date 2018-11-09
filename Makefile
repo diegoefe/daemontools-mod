@@ -16,7 +16,6 @@ clean-bin: clean-serv
 	rm -rfv compile 
 		
 clean-serv:
-	#./stopit
 	$(MAKE) -C servers clean
 	$(MAKE) -C servicios clean
 
