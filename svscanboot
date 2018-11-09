@@ -2,7 +2,7 @@
 
 . $(dirname "${BASH_ARGV[0]}")/env.sh
 
-cmds=${DTM}/command
+cmds=${DTM_CMDS}
 serv=${DTM_WATCH}
 
 if [ ! -z "$1" ]; then serv=$1; fi
