@@ -7,5 +7,5 @@ servers:
 
 clean:
 	../stopit
-	rm -rfv real
-	rm -rfv watch
+	rm -rfv real/*
+	rm -rfv watch/*
