@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 
+. $(dirname "${BASH_ARGV[0]}")/env.sh
+
 spid=$(ps waux | grep "./svscanboot" | grep -v grep | awk '{ print $2 }')
 # echo "pid($spid)"
 if [ ! -z "$spid" ]
@@ -8,5 +10,6 @@ then
 	kill -9 $spid
 fi
 
-killall svscan || echo "No running svscan"
-killall supervise || echo "No running supervise"
+$KILLALL svscan || echo "No running svscan"
+$KILLALL supervise || echo "No running supervise"
+

@@ -6,5 +6,6 @@ servers:
 	./makeserv.sh 3
 
 clean:
+	../stopit
 	rm -rfv real
 	rm -rfv watch

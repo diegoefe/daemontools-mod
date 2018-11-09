@@ -6,14 +6,18 @@ dtools:
 servers:
 	$(MAKE) -C servers
 
-servicios:
+servicios: servers
 	$(MAKE) -C servicios
 
-clean:
-	./stopit
+clean: clean-bin
+
+clean-bin: clean-serv
 	rm -rfv command
 	rm -rfv compile 
+		
+clean-serv:
+	#./stopit
 	$(MAKE) -C servers clean
 	$(MAKE) -C servicios clean
-		
+
 .PHONY: servers servicios
