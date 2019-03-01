@@ -12,13 +12,18 @@ else
 	fi
 fi
 
-# Stop all running servers!
-for s in $(find $DTM_WATCH -type l)
-do
-	echo "Stopping $s"
-	svc -d $s
-	#svstat $s
-done
+if [ -z "$1" ]
+then
+    # Stop all running servers!
+    for s in $(find $DTM_WATCH -type l)
+    do
+        echo "Stopping $s"
+        svc -d $s
+        #svstat $s
+    done
+else
+    echo "Leaving servers UP"
+fi
 
 spid=$(ps waux | grep "./svscanboot" | grep -v grep | awk '{ print $2 }')
 # echo "pid($spid)"

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+exec 2>&1
+
+srv=../../servers/simple
+
+$srv 4 >/dev/null &
+p1=$!
+
+$srv 5 >/dev/null &
+p2=$!
+
+$srv 6 >/dev/null &
+p3=$!
+
+
+echo "Running with pids: $p1 $p2 $p3"
+
+kill_em_all() {
+    kill $p1
+    kill $p2
+    kill $p3
+    exit 0
+}
+
+trap kill_em_all INT TERM
+
+while :; do sleep 1; done
