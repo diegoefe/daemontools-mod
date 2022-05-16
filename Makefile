@@ -9,6 +9,12 @@ servers:
 local: servers
 	$(MAKE) -C local
 
+svwait: dtools
+	$(MAKE) -C src/runit/src svwaitup svwaitdown
+	cp -v src/runit/src/svwaitup command
+	cp -v src/runit/src/svwaitdown command
+	$(MAKE) -C src/runit/src clean
+
 clean: clean-bin
 
 clean-bin: clean-local
