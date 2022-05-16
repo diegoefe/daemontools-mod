@@ -9,6 +9,7 @@ servers:
 local: servers
 	$(MAKE) -C local
 
+# http://smarden.org/pape/djb/daemontools/noinit.html (instructions)
 svwait: dtools
 	$(MAKE) -C src/runit/src svwaitup svwaitdown
 	cp -v src/runit/src/svwaitup command
