@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export DTM=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export DTM_CMDS=${DTM}/command
 export DTM_SERV=${DTM}/local

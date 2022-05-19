@@ -1,4 +1,4 @@
 # ps waux | grep 'svscanboot\|svscan\|supervise' | grep -v grep
-ps wauf | grep 'svscanboot\|svscan\|supervise\|readproctitle' | grep -v grep
+ps wauxf | grep 'svscanboot\|svscan\|supervise\|readproctitle' | grep -v grep
 
-ps waux | grep "\<simple\>" | grep -v grep
+ps wauxf | grep "\<simple\>" | grep -v grep | grep -v ibus

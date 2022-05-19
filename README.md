@@ -13,6 +13,12 @@ make
 this would build all original binaries in ./command, sample server(s) in
 ./servers and create some directories to run the servers in ./local/real/\*
 
+-   Set the path:
+
+```bash
+. setpath.sh
+```
+
 -   Start the tools:
 
 ```bash
